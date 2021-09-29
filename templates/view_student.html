@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block title %} view studends {% endblock title %} {% block body %}
+<div class="container my-4">
+    <table class="table table-striped">
+        <h2 class="text-center"> View Student Data</h2>
+        <thead>
+            <tr>
+                <th scope=="col"> sr no</th>
+                <!-- <th scope=="col"> id</th> -->
+                <th scope=="col"> student name</th>
+                <th scope=="col"> collage name</th>
+                <th scope=="col"> branch </th>
+                <th scope=="col"> mobile </th>
+                <th scope=="col">
+                    Edit / Delete
+                </th>
+            </tr>
+        </thead>
+        {% for i in student_data %}
+        <tr>
+            <th scope="row"> {{forloop.counter}}</th>
+            <!-- <th scope="row"> {{i.id}}</th> -->
+            <td>{{ i.studentname}}</td>
+            <td>{{ i.collagename}}</td>
+            <td>{{ i.branch}}</td>
+            <td>{{i.mobilenum}}</td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="edit_info/{{ i.id}}"> Edit</a>
+                <a class="btn btn-danger btn-sm" href="delete/{{i.id}}"> Delate</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>{% endblock body %}

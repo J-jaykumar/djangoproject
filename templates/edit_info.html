@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block title %} add student {% endblock title %}{% block body%}
+<div class="container">
+    <form method="POST" action="/update/{{edit_info.id}}">
+        <h2>update student data</h2>
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="stu_name" class="form-label">Student Name</label>
+            <input type="text" class="form-control" id="stu_name" name="stu_name" value={{ edit_info.studentname }}>
+
+        </div>
+
+        <div class="mb-3">
+            <label for="collage_name" class="form-label">Collage Name</label>
+            <input type="text" class="form-control" id="collage_name" name="collage_name" value={{ edit_info.collagename }}>
+        </div>
+        <div class="mb-3">
+            <label for="mobile" class="form-label">Mobile</label>
+            <input type="tel" class="form-control" id="mobile" name="mobile" value={{ edit_info.mobilenum }}>
+        </div>
+        <div class="mb-3">
+            <label for="branch" class="form-label">branch</label>
+            <input type="text" class="form-control" name="branch" id="branch" value={{ edit_info.branch }}>
+        </div>
+
+        <button type="submit" class="btn btn-primary">update</button>
+    </form>
+</div>
+{% endblock body%}
