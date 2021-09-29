@@ -26,7 +26,7 @@ SECRET_KEY = '8^_$c0238rpp@v&9m^u5^8o0s2mwmlnj^jm&ffcb!a+k681@1h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [ '127.0.0.1']
+ALLOWED_HOSTS = [ '127.0.0.1','studentappamplifier.herokuapp.com/']
 
 
 # Application definition
